@@ -1,0 +1,71 @@
+{
+    "Extension Header":{
+        "prefix": ["extension header","header"],
+        "body": [
+            "// ==UserScript==",
+            "// @name         ${1:插件名称}",
+            "// @author       ${2:作者名称}",
+            "// @version      1.0.0",
+            "// @description  $3",
+            "// @timestamp    $CURRENT_SECONDS_UNIX",
+            "// $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            "// @license      MIT",
+            "// @homepageURL  ${4:https://github.com/sealdice/javascript}",
+            "// ==/UserScript=="
+        ],
+        "description": "插入JS插件头部信息"
+    }
+
+    ,"New Extension":{
+        "prefix": ["new extension","ext"],
+        "body": [
+            "// 首先检查是否已经存在",
+            "if (!seal.ext.find('test')) {",
+            "    // 不存在，那么建立扩展，名为$1，作者“$2”，版本1.0.0",
+            "    const ext = seal.ext.new('$1', '$2', '1.0.0');",
+            "    // 注册扩展",
+            "    seal.ext.register(ext);",
+            "}"
+        ],
+        "description": "创建新的扩展"
+    }
+    
+    ,"New Command":{
+        "prefix": ["new command","cmd"],
+        "body": [
+            "const cmd = seal.ext.newCmdItemInfo();",
+            "cmd.name = '$1'; // 指令名字，可用中文",
+            "cmd.help = '$2';",
+            "cmd.solve = (ctx, msg, cmdArgs) => {",
+            "    let val = cmdArgs.getArgN(1);",
+            "    switch (val) {",
+            "        case 'help': {",
+            "            const ret = seal.ext.newCmdExecuteResult(true);",
+            "            ret.showHelp = true;",
+            "            return ret;",
+            "        }",
+            "        default: {",
+            "            $3",
+            "            return seal.ext.newCmdExecuteResult(true);",
+            "        }",
+            "    }",
+            "};",
+            "// 将命令注册到扩展中",
+            "ext.cmdMap['$1'] = cmd;   ",
+        ],
+        "description": "创建新的命令"
+    }
+    
+
+    ,"Reply To Sender":{
+        "prefix": ["replyToSender","rts","reply"],
+        "body": "seal.replyToSender(ctx, msg, $1);",
+        "description": "向消息发送者发送回应"
+    }
+
+    ,"Return":{
+        "prefix": ["return","ret"],
+        "body": "return seal.ext.newCmdExecuteResult(${1|true,false|});",
+        "description": "返回指令结果对象"
+    }
+}
