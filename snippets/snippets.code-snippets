@@ -68,4 +68,15 @@
         "body": "return seal.ext.newCmdExecuteResult(${1|true,false|});",
         "description": "返回指令结果对象"
     }
+
+    ,"Timestamp":{
+        "prefix": ["timestamp"],
+        "body": "$CURRENT_SECONDS_UNIX",
+        "description": "插入秒级UNIX时间戳"
+    }
+    ,"Datetime":{
+        "prefix": ["datetime"],
+        "body": "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+        "description": "插入形似“2023-02-17 13:22:50”的时间字符串"
+    }
 }

@@ -9,3 +9,5 @@
 |New Command|"new command","cmd"|创建新的命令|
 |Reply To Sender|"replyToSender","rts","reply"|向消息发送者发送回应|
 |Return|"return","ret"|返回指令结果对象|
+|Timestamp|"timestamp"|插入秒级UNIX时间戳|
+|Datetime|"datetime"|插入形似“2023-02-17 13:22:50”的时间字符串|
