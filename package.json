@@ -2,7 +2,7 @@
     "name": "sealdice-snippets",
     "displayName": "Sealdice Snippets",
     "description": "海豹TRPG骰点核心的扩展开发常用代码片段",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "engines": {
         "vscode": "^1.75.0"
     },

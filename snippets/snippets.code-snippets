@@ -20,9 +20,10 @@
         "prefix": ["new extension","ext"],
         "body": [
             "// 首先检查是否已经存在",
-            "if (!seal.ext.find('test')) {",
+            "let ext = seal.ext.find('$1');",
+            "if (!ext) {",
             "    // 不存在，那么建立扩展，名为$1，作者“$2”，版本1.0.0",
-            "    const ext = seal.ext.new('$1', '$2', '1.0.0');",
+            "    ext = seal.ext.new('$1', '$2', '1.0.0');",
             "    // 注册扩展",
             "    seal.ext.register(ext);",
             "}"
